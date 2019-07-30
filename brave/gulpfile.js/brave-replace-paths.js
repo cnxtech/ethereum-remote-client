@@ -142,6 +142,12 @@ const createBraveReplacePathsTask = () => {
           `'${bravePrefix}ui/app/pages/first-time-flow/create-password/import-with-seed-phrase/import-with-seed-phrase.component'`
         )
       )
+      .pipe(
+        replace(
+          /'(.*)\/networks-tab\.constants'/gm,
+          `'${bravePrefix}ui/app/pages/settings/networks-tab/networks-tab.constants'`
+        )
+      )
       .pipe(gulp.dest(file => file.base))
   })
 }
